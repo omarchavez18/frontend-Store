@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>frontend-store</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+  </head>
+  <body>
+    <header class="header">
+      <a href="index.html">
+        <img
+          class="header_logo"
+          src="./imagenes/images/logo.png"
+          alt="logotipo"
+        />
+        <!-- la parte de alt es para darle una descripcion a la imagen-->
+      </a>
+    </header>
+
+    <nav class="navegacion">
+      <!--para crear varios enlaces seguidos de una sola vez seria= a * el numero de enlaces y enter -->
+      <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"
+        >Tienda</a
+      >
+      <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+      <h1>React JS</h1>
+      <div class="camisa">
+        <img
+          class="camisa__imagen"
+          src="./imagenes/images/3.jpg"
+          alt="imagen del producto"
+        />
+        <div class="camisa__contenido">
+          <p>
+            In mauris erat, faucibus non enim a, blandit mattis ligula. Aliquam
+            dolor magna, facilisis id magna vitae, fermentum ultrices justo.
+            Nunc ut neque dictum leo dapibus congue. Nullam vel ultricies arcu.
+            Aliquam dolor magna, facilisis id magna vitae, fermentum ultrices
+            justo.
+          </p>
+          <!-- el "form" permite crear una tabla, con opciones de seleccion, como aqui abajo de chica, mediana y grande-->
+          <form class="formulario">
+            <select class="formulario__campo">
+              <option disabled selected>--Seleccionar Talla--</option>
+              <!-- "disabled" permite que a la hora de seleccionarlo aparezca deshablitado y "selected" permita que aparezca predeterminado al inicio-->
+
+              <!--estas serian las opciones de la caja-->
+              <option>Chica</option>
+              <option>Mediana</option>
+              <option>Grande</option>
+            </select>
+
+            <!--esto nos permite crear una caja selectora de numeros, por el tipo "number", el numero minimo es 1 por el "min" y un texto en la caja con "placeholder"-->
+            <input
+              class="formulario__campo"
+              type="number"
+              placeholder="Cantidad"
+              min="1"
+            />
+
+            <!--nos permite crear un boton de "submit" con el texto de "Agregar al Carrito" por el "value"-->
+            <input
+              class="formulario__submit"
+              type="submit"
+              value="Agregar al Carrito"
+            />
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__texto">
+        Front End Store -Todos los derechos reservados 2022.
+      </p>
+    </footer>
+  </body>
+</html>

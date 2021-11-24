@@ -1,0 +1,265 @@
+:root {
+  --primario: #9c27b0;
+  --primarioOscuro: #430d4d;
+  --secundario: #ffce00;
+  --secundarioOscuro: #f3ef0ab9;
+  --blanco: #fff;
+  --negro: #000;
+
+  --fuentePrincipal: "Staatliches", cursive;
+}
+/*los globales que no pueden faltar*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*esto permite que 1rem sea 10px*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+} /*aqui terminan los globales que no pueden faltar*/
+
+/*globales*/
+body {
+  background-color: var(--primario);
+  font-size: 1.6rem;
+  line-height: 1.5; /*interlineado*/
+}
+
+p {
+  font-size: 1.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--blanco);
+}
+
+a {
+  text-decoration: none; /*esto le quita lo subrayado a los enlaces*/
+}
+
+img {
+  /*se refiere a que no pase mas del 100% del tamaño original*/
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--secundario);
+  font-family: var(--fuentePrincipal);
+}
+
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3.2rem;
+}
+h3 {
+  font-size: 2.4rem;
+}
+/**Header**/
+.header {
+  display: flex;
+  justify-content: center;
+}
+.header__logo {
+  margin: 2rem 0;
+}
+
+/**Footer**/
+.footer {
+  background-color: var(--primarioOscuro);
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.footer__texto {
+  font-family: var(--fuentePrincipal);
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+/*navegacion*/
+.navegacion {
+  background-color: var(
+    --primarioOscuro
+  ); /*esto nos crea una barra colorida en la barra del menu de un color*/
+  padding: 1rem 0; /* esto genera el ancho de la barra del menu*/
+  display: flex; /*esta linea junto con la de abajo centra el texto en la barra*/
+  justify-content: center;
+  gap: 2rem; /* esto da espaciado entre las palabras del menu*/
+  border-radius: 1rem;
+}
+.navegacion__enlace {
+  font-family: var(--fuentePrincipal);
+  color: var(--blanco);
+  font-size: 3rem;
+}
+
+.navegacion__enlace--activo,/*nos permite mantener el color del hover indefinidamente*/
+.navegacion__enlace:hover {
+  /*esto nos permite cambiar el color del texto cuando el cursor pase sobre el*/
+  color: var(--secundario);
+}
+/**Grid**/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem; /*separacion entre columnas*/
+  row-gap: 2rem; /*separacion entre filas*/
+  /*escribir solo gap aplica las dos anteriores de una sola vez*/
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/**productos**/
+.producto {
+  background-color: var(--primarioOscuro);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.producto__nombre {
+  font-size: 4rem;
+}
+
+.producto__precio {
+  font-size: 2.8rem;
+  color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio {
+  font-family: var(--fuentePrincipal);
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/*graficos*/
+.grafico {
+  min-height: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover; /*hace que sea el tamaño completo*/
+  border-radius: 2rem;
+  grid-column: 1/3;
+}
+
+.grafico--camisas {
+  grid-row: 2 / 3; /*nos indica de que a que area va la imagen*/
+  background-image: url(../imagenes/images/grafico1.jpg);
+}
+
+.grafico--node {
+  background-image: url(../imagenes/images/grafico2.jpg);
+  grid-row: 8/9;
+}
+
+@media (min-width: 768px) {
+  .grafico--node {
+    grid-row: 5 / 6;
+    grid-column: 2 / 4;
+  }
+}
+
+/**nosotros**/
+/*ACOMODO DE TEXTO COMO DE LA IMAGEN DE APARTADO "SOBRE NOSOTROS"*/
+.nosotros {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+  .nosotros {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+.nosotros__imagen {
+  grid-row: 1/2;
+}
+@media (min-width: 768px) {
+  .nosotros__imagen {
+    grid-column: 2/3;
+  }
+} /*FIN DEL ACOMODO DEL TEXTO E IMAGEN DE APARTADO "SOBRE NOSOTROS"*/
+
+/* bloques de iconos*/
+/*ACOMODO DE LOS ICONOS CON SU TEXTO*/
+.bloques {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .bloques {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.bloque {
+  text-align: center;
+}
+
+.bloque__titulo {
+  margin: 0;
+}
+/* FIN DEL ACOMODO DE LOS ICONOS CON SU TEXTO*/
+
+/**pagina del producto**/
+
+@media (min-width: 768px) {
+  .camisa {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.formulario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.formulario__campo {
+  /**   esto de abajo aplica en la primera parte el "width" en la segunda el "style" y en la ultima el "color"  **/
+  border: 1rem solid var(--primarioOscuro);
+  background-color: transparent;
+  color: var(--secundario);
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  appearance: none;
+}
+
+.formulario__submit {
+  background-color: var(--secundario);
+  border: none;
+  font-size: 2rem;
+  font-family: var(--fuentePrincipal);
+  padding: 2rem;
+  /*los "transition" permite cambiar entre una indicacion y otra, al pasar el cursor sobre el boton se aplicara lo escrito en "hover"*/
+  transition: background-color 0.5s ease;
+  transition: font-size 0.5s ease;
+  grid-column: 1/3;
+}
+
+.formulario__submit:hover {
+  /*esto de abajo permite que aparezca una manita al pasar el cursor sobre el boton*/
+  cursor: pointer;
+  background-color: var(--secundarioOscuro);
+  font-size: 2.3rem;
+}
